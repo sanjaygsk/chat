@@ -1,0 +1,1 @@
+export { default as commonTypes } from './common.constants'
