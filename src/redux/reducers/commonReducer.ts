@@ -1,7 +1,7 @@
 import { commonTypes } from "../constants";
 import { initialState } from "./initalStates";
 
-export default (state = initialState, action: any) => {
+const CommonReducer = (state = initialState, action: any) => {
     if(!action || (action && !action.type)) return state;
     switch(action.type){
         case commonTypes.REQ: {
@@ -27,3 +27,5 @@ export default (state = initialState, action: any) => {
         }
     }
 }
+
+export default CommonReducer;

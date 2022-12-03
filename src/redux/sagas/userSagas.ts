@@ -1,5 +1,5 @@
 import { put, takeLatest } from 'redux-saga/effects';
-import { getRequest, postRequest, putRequest, deleteRequest } from '../../helpers/api.helper'
+import { getRequest } from '../../helpers/api.helper'
 import CommonType from '../constants/common.constants'
 
 function* fetchNews(){

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppIcon} from './assets/svg';
 import { getNews } from './redux/actions/action'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 
 const App = (props:any) => {
