@@ -4,7 +4,7 @@ import { getNews } from './redux/actions/action'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-const App = (props) => {
+const App = (props:any) => {
 
   const dispatch = useDispatch()
 
