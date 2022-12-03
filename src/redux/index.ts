@@ -1,18 +1,15 @@
 // ...
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducers/rootReducer'
 import rootSaga from './sagas/rootSaga'
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const sagaMiddleware = createSagaMiddleware()
 
-const reduxDevTools = 
-    window?.__REDUX_DEVTOOLS_EXTENSION__ && window?.__REDUX_DEVTOOLS_EXTENSION__();
-
-
 const middleware = 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && process.env.NODE_ENV === "development" 
-        ? compose(applyMiddleware(sagaMiddleware), reduxDevTools) 
+    process.env.NODE_ENV === "development" 
+        ? composeWithDevTools(applyMiddleware(sagaMiddleware)) 
         : applyMiddleware(sagaMiddleware)
 
 export const store = createStore(rootReducer, middleware)
